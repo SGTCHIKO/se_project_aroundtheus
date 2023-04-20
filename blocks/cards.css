@@ -1,6 +1,6 @@
 .cards{
-/* fonts*/
 margin-top: 30px;
+
 }
 .cards__list{
 display: grid;
@@ -31,6 +31,9 @@ margin-top: 30px;
   align-items: center;
   justify-content: space-between;
   border-radius: 0px 0px 10px 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .card__like-button{
   background: transparent url(../images/like_inactive.svg) center no-repeat;
