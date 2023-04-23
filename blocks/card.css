@@ -26,6 +26,8 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
  }
   .card__like-button{
     background: transparent url(../images/like_inactive.svg) center no-repeat;
@@ -35,4 +37,5 @@
   }
   .card__like-button:hover {
     opacity: 0.5;
+    cursor: pointer;
   }

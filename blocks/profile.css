@@ -70,6 +70,7 @@
   width: 24px;
   height: 24px;
   border-color: #fff;
+  border-width: 1px;
   background-color: transparent;
   background-image: url(../images/Edit\ Button.svg);
   background-repeat: no-repeat;
@@ -86,9 +87,6 @@
 @media screen and (max-width: 900px) {
   .profile__title {
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     max-width: 230px;
   }
   .profile {
@@ -96,9 +94,6 @@
   }
   .profile__description {
     text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     max-width: 230px;
   }
 
@@ -121,9 +116,6 @@
     margin-bottom: 36px;
     max-width: 196px;
     padding: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .profile__title {
     font-size: 22px;
@@ -131,9 +123,6 @@
     text-align: center;
     padding: 0;
     max-width: 196px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   .profile__info {
