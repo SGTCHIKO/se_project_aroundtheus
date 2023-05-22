@@ -24,33 +24,77 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg"
   }
 ]
-/* Elements*/
 
+/* -------------------------------------------------------------------------- */
+/*                               QUERY SELECTOR                               */
+/* -------------------------------------------------------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#edit-modal");
 const modalCloseButton = document.querySelector("#modal__close-profile-button");
+const profileTitle = document.querySelector(".profile__title");
+const profileDescription = document.querySelector(".profile__description");
+const profileSaveButton = document.querySelector(".modal__save-button");
+const profileEditForm = profileEditModal.querySelector(".modal__form");
+
+const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
+
+
+const cardListEl = document.querySelector(".cards__list")
+
+/* -------------------------- QUERY SELECTOR INPUTS ------------------------- */
 
 const profileTitleInput = document.querySelector("#profile-title-input");
-const profileTitle = document.querySelector(".profile__title");
-
 const profileDescriptionInput = document.querySelector("#profile-description-input");
-const profileDescription = document.querySelector(".profile__description");
 
-profileSaveButton = document.querySelector(".modal__save-button");
-
-
-profileEditButton.addEventListener("click", () => {
-  profileEditModal.classList.add("modal__opened");
-});
-
-modalCloseButton.addEventListener("click", () => {
+/* -------------------------------------------------------------------------- */
+/*                                  FUNCTIONS                                 */
+/* -------------------------------------------------------------------------- */
+function closePopop(){
   profileEditModal.classList.remove("modal__opened");
-});
+};
+
+function openPopop(){
+  profileEditModal.classList.add("modal__opened");
+};
+
+function getCardElement(cardData){
+const cardElement = cardTemplate.cloneNode(true)
+
+const cardImageEl = cardElement.querySelector(".card__image")
+const cardTitleEl = cardElement.querySelector(".card__name")
+
+cardTitleEl.textContent = cardData.name;
+cardImageEl.src = cardData.link;
 
 
-profileSaveButton.addEventListener("click", (evt) => {
+return cardElement;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                               EVENT HANDLERS                               */
+/* -------------------------------------------------------------------------- */
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  evt.preventDefault();
-  profileEditModal.classList.remove("modal__opened");
+  closePopop()
+};
+
+/* -------------------------------------------------------------------------- */
+/*                               EVENT LISTENER                               */
+/* -------------------------------------------------------------------------- */
+
+profileEditButton.addEventListener("click", () => {
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+  openPopop()
+});
+
+modalCloseButton.addEventListener("click",closePopop);
+
+profileEditForm.addEventListener("submit",handleProfileEditSubmit);
+
+initialCards.forEach((cardData) => {
+const cardElement = getCardElement(cardData);
+cardListEl.prepend(cardElement);
 });
