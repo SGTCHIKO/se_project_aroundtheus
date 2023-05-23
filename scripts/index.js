@@ -50,34 +50,32 @@ const profileDescriptionInput = document.querySelector("#profile-description-inp
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
 function closePopop(){
-  profileEditModal.classList.remove("modal__opened");
+    profileEditModal.classList.remove("modal_opened");
 };
 
 function openPopop(){
-  profileEditModal.classList.add("modal__opened");
+    profileEditModal.classList.add("modal_opened");
 };
 
 function getCardElement(cardData){
-const cardElement = cardTemplate.cloneNode(true)
-
-const cardImageEl = cardElement.querySelector(".card__image")
-const cardTitleEl = cardElement.querySelector(".card__name")
-
-cardTitleEl.textContent = cardData.name;
-cardImageEl.src = cardData.link;
-
-
-return cardElement;
+    const cardElement = cardTemplate.cloneNode(true)
+    const cardImageEl = cardElement.querySelector(".card__image")
+    const cardTitleEl = cardElement.querySelector(".card__name")
+    const cardImageAlt = cardElement.querySelector(".card__image").alt
+    cardTitleEl.textContent = cardData.name;
+    cardImageEl.src = cardData.link;
+    cardImageAlt.textContent = cardData.name;
+    return cardElement;
 };
 
 /* -------------------------------------------------------------------------- */
 /*                               EVENT HANDLERS                               */
 /* -------------------------------------------------------------------------- */
 function handleProfileEditSubmit(e) {
-  e.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  closePopop()
+    e.preventDefault();
+    profileTitle.textContent = profileTitleInput.value;
+    profileDescription.textContent = profileDescriptionInput.value;
+    closePopop()
 };
 
 /* -------------------------------------------------------------------------- */
@@ -85,8 +83,8 @@ function handleProfileEditSubmit(e) {
 /* -------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
+    profileTitleInput.value = profileTitle.textContent;
+    profileDescriptionInput.value = profileDescription.textContent;
   openPopop()
 });
 
@@ -95,6 +93,6 @@ modalCloseButton.addEventListener("click",closePopop);
 profileEditForm.addEventListener("submit",handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-const cardElement = getCardElement(cardData);
-cardListEl.prepend(cardElement);
+    const cardElement = getCardElement(cardData);
+    cardListEl.prepend(cardElement);
 });
