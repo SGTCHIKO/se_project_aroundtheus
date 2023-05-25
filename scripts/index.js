@@ -54,18 +54,21 @@ function closePopop(){
 };
 
 function openPopop(){
+    profileTitleInput.value = profileTitle.textContent;
+    profileDescriptionInput.value = profileDescription.textContent;
     profileEditModal.classList.add("modal_opened");
+
 };
 
 function getCardElement(cardData){
     const cardElement = cardTemplate.cloneNode(true)
     const cardImageEl = cardElement.querySelector(".card__image")
     const cardTitleEl = cardElement.querySelector(".card__name")
-    const cardImageAlt = cardElement.querySelector(".card__image").alt
     cardTitleEl.textContent = cardData.name;
     cardImageEl.src = cardData.link;
-    cardImageAlt.textContent = cardData.name;
+    cardImageEl.alt = "Image of" + " " + cardTitleEl.textContent;
     return cardElement;
+
 };
 
 /* -------------------------------------------------------------------------- */
@@ -83,9 +86,7 @@ function handleProfileEditSubmit(e) {
 /* -------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
-    profileTitleInput.value = profileTitle.textContent;
-    profileDescriptionInput.value = profileDescription.textContent;
-  openPopop()
+    openPopop()
 });
 
 modalCloseButton.addEventListener("click",closePopop);
