@@ -106,29 +106,12 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 580px) {
-  .modal__close-button {
-    top: -50px;
-    right: 0;
-    width: 26px;
+@media screen and (max-width: 520px) {
+  .modal__close-button{
     height: 26px;
-  }
-}
+    width: 26px;
+    left: 90%;
+    margin-bottom: 13.62px;
 
-@media screen and (max-width: 480px) {
-  .modal__heading {
-    font-size: 18px;
-    padding: 25px 22px 75px;
-  }
-
-  .modal__container {
-    width: 282px;
-    height: 322px;
-  }
-
-  .modal__save-button{
-    margin: 48px 0 0;
-    font-size: 14px;
-    height: 46px;
   }
 }
