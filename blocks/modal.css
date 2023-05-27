@@ -111,7 +111,17 @@
     height: 26px;
     width: 26px;
     left: 90%;
-    margin-bottom: 13.62px;
+    bottom: 330px;
 
+  }
+  .modal__container{
+    padding: 25px 22px 22px 22px;
+  }
+  .modal__save-button{
+    height: 46px;
+    font-size: 14px;
+  }
+  .modal__heading{
+    font-size: 18px;
   }
 }
