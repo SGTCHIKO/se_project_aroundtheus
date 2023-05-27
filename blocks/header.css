@@ -7,8 +7,8 @@
 .header__logo {
   align-self: start;
   padding-bottom: 41px;
-  width: 168.75px;
-  height: 127.5px;
+  width: 173px;
+  height: 33px;
 }
 
 @media screen and (max-width: 500px) {
