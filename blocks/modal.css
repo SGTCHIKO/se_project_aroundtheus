@@ -106,6 +106,43 @@
   opacity: 0.8;
 }
 
+.modal__preview-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding: 0;
+  margin-top: 90px;
+}
+.modal__image {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+.modal__caption {
+  margin: 10px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+}
+
+.modal__preview-close {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  background: url(../images/Close\ Icon.svg) transparent center no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in 0s;
+}
+
+.modal__preview-close:hover {
+  cursor: pointer;
+  opacity: 60%;
+  transition: opacity 0.3s ease-in 0s;
+}
+
 @media screen and (max-width: 520px) {
   .modal__close-button{
     height: 26px;
