@@ -11,6 +11,11 @@
     border-radius: 10px 10px 0px 0px;
     background-size: cover;
   }
+  .card__image:hover{
+    cursor: pointer;
+    opacity: 50%;
+  }
+
   .card__description{
     display: flex;
     background-color: white;

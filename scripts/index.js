@@ -30,7 +30,7 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#edit-modal");
-const modalCloseButton = document.querySelector("#modal__close-profile-button");
+const profileModalCloseButton = document.querySelector("#modal__close-profile-button");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileSaveButton = document.querySelector(".modal__save-button");
@@ -103,6 +103,7 @@ function handleAddCardSubmit(evt){
     const cardElement = getCardElement({name,link});
     cardListEl.prepend(cardElement);
     closePopop(addCardModal);
+    addCardFormElement.reset();
 };
 
 function handleProfileEditSubmit(e) {
@@ -122,7 +123,7 @@ profileEditButton.addEventListener("click", () => {
   openPopop(profileEditModal);
 });
 
-modalCloseButton.addEventListener("click", () => closePopop(profileEditModal));
+profileModalCloseButton.addEventListener("click", () => closePopop(profileEditModal));
 profileEditForm.addEventListener("submit",handleProfileEditSubmit);
 addNewCardButton.addEventListener("click", () => openPopop(addCardModal));
 addCardModalCloseButton.addEventListener("click", () => closePopop(addCardModal));

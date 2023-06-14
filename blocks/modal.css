@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  display: none;
+  display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
@@ -22,7 +22,6 @@
   pointer-events: all;
   transition-delay: 0.1s;
   opacity: 1;
-  display: flex;
 }
 
 .modal__container {
