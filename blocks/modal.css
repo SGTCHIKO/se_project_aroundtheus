@@ -142,6 +142,31 @@
   transition: opacity 0.3s ease-in 0s;
 }
 
+.popup__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.form__input-error {
+  position: relative;
+  bottom: 5px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 15px;
+  opacity: 0;
+}
+
+.popup__error_visible {
+  color: red;
+}
+
+.popup__button_disabled {
+  color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
 @media screen and (max-width: 520px) {
   .modal__close-button{
     height: 26px;

@@ -53,6 +53,7 @@
                minlength="2"
                maxlength="40"
                required placeholder="Title"/>
+        <span class="popup__error" id="owner-name-error"></span>
 
         <input class="modal__input"
                id="profile-description-input"
@@ -62,8 +63,9 @@
                maxlength="200"
                required
                placeholder="Description"/>
+        <span class="popup__error" id="owner-description-error"></span>
 
-        <button class="modal__save-button" id="modal__save-button" type="submit">Save</button>
+        <button class="modal__save-button popup__button popup__botton-disabled" id="modal__save-button" type="submit" disabled>Save</button>
       </form>
     </div>
   </div>
@@ -81,6 +83,7 @@
                minlength="2"
                maxlength="40"
                required placeholder="Title"/>
+        <span class="popup__error" id="owner-name-error"></span>
 
         <input class="modal__input modal__input_type_url"
                type="url"
@@ -89,7 +92,9 @@
                maxlength="200"
                required
                placeholder="Image URL"/>
-        <button class="modal__save-button" type="submit">Save</button>
+        <span class="popup__error" id="owner-name-error"></span>
+
+        <button class="modal__save-button popup__button popup__botton-disabled" type="submit" disabled>Save</button>
       </form>
     </div>
   </div>
@@ -121,5 +126,6 @@
 </template>
 
   <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/validation.js" defer></script>
 </body>
 </html>
