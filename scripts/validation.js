@@ -1,12 +1,10 @@
 
-function showInputError(formEl,inputEl, {inputErrorClass,errorClass}){
+function showInputError(formEl,inputEl,{inputErrorClass,errorClass}){
   const errorMessageEL = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(inputErrorClass);
   errorMessageEL.textContent = inputEl.validationMessage;
   errorMessageEL.classList.add(errorClass);
-  console.log(inputEl.id)
 }
-
 
 function hideInputError(formEl,inputEl, {inputErrorClass,errorClass}){
   const errorMessageEL = formEl.querySelector(`#${inputEl.id}-error`);
@@ -29,12 +27,12 @@ function hasInvalidInput(inputList) {
 }
 
 
-function toggleButtonState(inputEls,submitButton,{inactiveButtonClass}){
+function toggleButtonState(inputEls,submitButton,{inactiveButtonClass}) {
   if(hasInvalidInput(inputEls)){
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
     return;
-  }
+  };
     submitButton.classList.remove(inactiveButtonClass);
     submitButton.disabled = false;
 }
@@ -42,12 +40,12 @@ function toggleButtonState(inputEls,submitButton,{inactiveButtonClass}){
 
 function setEventListeners(formEl,options) {
   const {inputSelector} = options;
-  const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector('.modal__Button');
-  inputEls.forEach((inputEl) => {
+  const inputEl = [...formEl.querySelectorAll(inputSelector)];
+  const submitButton = formEl.querySelector('.modal__save-button');
+  inputEl.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
        checkInputValidity(formEl,inputEl,options);
-       toggleButtonState(inputEls,submitButton);
+       toggleButtonState(inputEl,submitButton);
     });
   });
 }
@@ -60,18 +58,17 @@ function enableValidation(options) {
       e.preventDefault();
     });
     setEventListeners(formEl, options);
-
   });
-}
+};
 
 
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible"
+  inactiveButtonClass: ".modal__button-disabled",
+  inputErrorClass: ".modal__input_type-error",
+  errorClass: ".modal__error_visible",
 };
 
 

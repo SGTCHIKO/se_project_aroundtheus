@@ -142,7 +142,7 @@
   transition: opacity 0.3s ease-in 0s;
 }
 
-.modal__input_type_error {
+.modal__input_type-error {
   border-bottom: 1px solid #ff0000;
 }
 
@@ -156,11 +156,7 @@
   opacity: 0;
 }
 
-.modal__error_visible {
-  color: red;
-}
-
-.modal__button_disabled {
+.modal__button-disabled {
   color: rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.2);
